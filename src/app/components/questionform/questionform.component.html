@@ -1,0 +1,130 @@
+<app-dashboard></app-dashboard>
+
+
+<div class="container center mt-sm-5 my-1">
+    <div class="question ml-sm-5 pl-sm-5 pt-2 container">
+        <div class="py-2 h5">
+            <b>{{ questionlist[currentquestion].ques}}</b>
+        </div>
+        <br>
+        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+            <label class="options">{{ questionlist[currentquestion].choice1}}
+                <input class="form-check-input" type="radio" [checked]=false name="option"
+                    [value]="questionlist[currentquestion].choice1" (change)="onchange($event)"
+                    id="flexRadioDefault2" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="options">{{ questionlist[currentquestion].choice2 }}
+                <input class="form-check-input" type="radio" [checked]=false name="option"
+                    [value]="questionlist[currentquestion].choice2" (change)="onchange($event)"
+                    id="flexRadioDefault2" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="options">{{ questionlist[currentquestion].choice3 }}
+                <input class="form-check-input" type="radio" name="option" [checked]=false
+                    [value]="questionlist[currentquestion].choice3" (change)="onchange($event)"
+                    id="flexRadioDefault2" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="options">{{ questionlist[currentquestion].choice4 }}
+                <input class="form-check-input" type="radio" [checked]=false name="option"
+                    [value]="questionlist[currentquestion].choice4" (change)="onchange($event)"
+                    id="flexRadioDefault2" />
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="d-flex align-items-center pt-3">
+        <div class="ml-auto mr-sm-5">
+            <ng-container *ngIf="currentquestion < questionlist.length - 1">
+                <button class="btn btn-success nextBtn" (click)="next()">
+                    Next
+                </button>
+            </ng-container>
+
+            <ng-container *ngIf="currentquestion === questionlist.length - 1">
+                <button type="button" class="btn btn-success" routerLink="/result" routerLinkActive="router-link-active"
+                    (click)="next()">
+                    Submit
+                </button>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
+<div class="container p-4 my-3 border">
+    <div class="question">
+        <h1 class="mb-3">{{ questionlist[currentquestion].ques}}</h1>
+
+        <ol>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" [checked]=false name="option"
+                        [value]="questionlist[currentquestion].choice1" (change)="onchange($event)"
+                        id="flexRadioDefault2" />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        {{ questionlist[currentquestion].choice1}}
+                    </label>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" [checked]=false name="option"
+                        [value]="questionlist[currentquestion].choice2" (change)="onchange($event)"
+                        id="flexRadioDefault2" />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        {{ questionlist[currentquestion].choice2 }}
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="option" [checked]=false
+                        [value]="questionlist[currentquestion].choice3" (change)="onchange($event)"
+                        id="flexRadioDefault2" />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        {{ questionlist[currentquestion].choice3 }}
+                    </label>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" [checked]=false name="option"
+                        [value]="questionlist[currentquestion].choice4" (change)="onchange($event)"
+                        id="flexRadioDefault2" />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        {{ questionlist[currentquestion].choice4 }}
+                    </label>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <ng-container *ngIf="currentquestion < questionlist.length - 1">
+            <button class="btn" (click)="next()">
+                Next
+                <i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i>
+            </button>
+        </ng-container>
+
+        <ng-container *ngIf="currentquestion === questionlist.length - 1">
+            <button type="button" class="btn btn-success" routerLink="/result" routerLinkActive="router-link-active"
+                (click)="next()">
+                Submit
+            </button>
+        </ng-container>
+    </div>
+</div> -->

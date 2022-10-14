@@ -1,0 +1,12 @@
+/* .bg-img {
+  background-image: url("G:\ANGULAR NTTPROJECT\QUESTIONNARE\src\assets\quiz.webp");
+
+  background-repeat: no-repeat;
+  background-size: auto;
+} */
+
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
