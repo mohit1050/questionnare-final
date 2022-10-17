@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionserviceService } from 'src/app/services/questionservice.service';
 import { UserresponseService } from 'src/app/services/userresponse.service';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @Component({
   selector: 'app-result',
@@ -24,6 +25,7 @@ export class ResultComponent implements OnInit {
   userresp: any[] = [];
   last: any[] = [];
   getName() {
+    console.log(localStorage.getItem('name'));
     return localStorage.getItem('name');
   }
   getscore() {
@@ -47,4 +49,10 @@ export class ResultComponent implements OnInit {
       console.log(this.last);
     });
   }
+
+  // percentage1: number = 0;
+  // scoredPercentage(data: number) {
+  //   this.percentage1 = (this.result / this.qlist[0].length) * 100;
+  //   return this.percentage1;
+  // }
 }
